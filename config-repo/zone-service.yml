@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/agms_zone_db
+    url: jdbc:mysql://localhost:3306/agms_zone_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=Asia/Colombo
     username: root
     password: Ijse@1234
   jpa:
