@@ -27,7 +27,7 @@ spring:
             - Path=/api/crops/**
 
 jwt:
-  secret: mysupersecretkeymysupersecretkey12345
+  secret: VGhpc0lzQVN1cGVyU2VjcmV0S2V5Rm9ySldUQXV0aFNlcnZpY2UxMjM0NTY3ODkw
 
 eureka:
   client:
