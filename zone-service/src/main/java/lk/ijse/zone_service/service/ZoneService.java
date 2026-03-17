@@ -31,13 +31,17 @@ public class ZoneService {
 
         Zone savedZone = zoneRepository.save(zone);
 
-        DeviceCreateRequest deviceRequest = new DeviceCreateRequest(
-                savedZone.getName() + "-sensor",
-                "ZONE-" + savedZone.getId()
-        );
+//        DeviceCreateRequest deviceRequest = new DeviceCreateRequest(
+//                savedZone.getName() + "-sensor",
+//                "ZONE-" + savedZone.getId()
+//        );
+//
+//        DeviceCreateResponse deviceResponse = ioTClient.registerDevice(accessToken, deviceRequest);
+//
+//        savedZone.setDeviceId(deviceResponse.getDeviceId());
 
-        DeviceCreateResponse deviceResponse = ioTClient.registerDevice(accessToken, deviceRequest);
-        savedZone.setDeviceId(deviceResponse.getDeviceId());
+        // Temporary test without external IoT API call
+        savedZone.setDeviceId("TEMP-DEVICE-ID");
 
         return zoneRepository.save(savedZone);
     }
