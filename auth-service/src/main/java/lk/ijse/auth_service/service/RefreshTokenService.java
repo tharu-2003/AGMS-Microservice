@@ -1,5 +1,6 @@
 package lk.ijse.auth_service.service;
 
+import jakarta.transaction.Transactional;
 import lk.ijse.auth_service.entity.RefreshToken;
 import lk.ijse.auth_service.entity.User;
 import lk.ijse.auth_service.repository.RefreshTokenRepository;
@@ -21,6 +22,7 @@ public class RefreshTokenService {
         this.refreshTokenRepository = refreshTokenRepository;
     }
 
+    @Transactional
     public RefreshToken createRefreshToken(User user) {
         refreshTokenRepository.deleteByUser(user);
 
