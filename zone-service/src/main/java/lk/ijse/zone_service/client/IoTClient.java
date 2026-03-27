@@ -2,33 +2,22 @@ package lk.ijse.zone_service.client;
 
 import lk.ijse.zone_service.dto.DeviceCreateRequest;
 import lk.ijse.zone_service.dto.DeviceCreateResponse;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.*;
-import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 
-@Component
-public class IoTClient {
+import java.util.Map;
 
-    @Value("${external.iot.base-url}")
-    private String baseUrl;
+@FeignClient(name = "iot-external-api", url = "${external.iot.base-url}")
+public interface IoTClient {
 
-    private final RestTemplate restTemplate = new RestTemplate();
+    @PostMapping("/auth/login")
+    Map<String, Object> login(@RequestBody Map<String, String> loginRequest);
 
-    public DeviceCreateResponse registerDevice(String accessToken, DeviceCreateRequest request) {
-        HttpHeaders headers = new HttpHeaders();
-        headers.setBearerAuth(accessToken);
-        headers.setContentType(MediaType.APPLICATION_JSON);
-
-        HttpEntity<DeviceCreateRequest> entity = new HttpEntity<>(request, headers);
-
-        ResponseEntity<DeviceCreateResponse> response = restTemplate.exchange(
-                baseUrl + "/devices",
-                HttpMethod.POST,
-                entity,
-                DeviceCreateResponse.class
-        );
-
-        return response.getBody();
-    }
+    @PostMapping("/devices")
+    DeviceCreateResponse registerDevice(
+            @RequestHeader("Authorization") String token,
+            @RequestBody DeviceCreateRequest request
+    );
 }
