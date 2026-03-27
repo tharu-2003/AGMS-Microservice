@@ -6,6 +6,8 @@ import lk.ijse.zone_service.service.ZoneService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/zones")
 public class ZoneController {
@@ -17,19 +19,9 @@ public class ZoneController {
     }
 
     @PostMapping
-    public ResponseEntity<Zone> create(
-            @RequestBody ZoneRequest request,
-            @RequestHeader("Authorization") String authorizationHeader
-    ) {
-        String token = authorizationHeader.replace("Bearer ", "");
-        return ResponseEntity.ok(zoneService.create(request, token));
+    public ResponseEntity<Zone> create(@RequestBody ZoneRequest request) {
+        return ResponseEntity.ok(zoneService.create(request));
     }
-
-//    For Testing without JWT Token
-//    @PostMapping
-//    public ResponseEntity<Zone> create(@RequestBody ZoneRequest request) {
-//        return ResponseEntity.ok(zoneService.create(request));
-//    }
 
     @GetMapping("/{id}")
     public ResponseEntity<Zone> get(@PathVariable Long id) {
