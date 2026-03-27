@@ -17,7 +17,6 @@ public class ZoneService {
 
     private final ZoneRepository zoneRepository;
     private final IoTClient ioTClient;
-
     private String cachedExternalToken = null;
 
     public ZoneService(ZoneRepository zoneRepository, IoTClient ioTClient) {
@@ -26,12 +25,13 @@ public class ZoneService {
     }
 
     @Transactional
-    public Zone create(ZoneRequest request, String localToken) {
-        // 1. Validation
+    public Zone create(ZoneRequest request) {
+        // 1. Validation Logic
         if (request.getMinTemp() >= request.getMaxTemp()) {
-            throw new RuntimeException("Min temperature must be less than Max temperature");
+            throw new RuntimeException("Invalid Temperature: Minimum temperature must be less than Maximum temperature.");
         }
 
+        // 2. Initial Save
         Zone zone = new Zone();
         zone.setName(request.getName());
         zone.setMinTemp(request.getMinTemp());
@@ -42,7 +42,7 @@ public class ZoneService {
         String deviceId = null;
 
         try {
-            // 2. Obtain Secure Session (External Login)
+            // 3. External IoT Login (PDF Specs: username, 123456)
             if (cachedExternalToken == null) {
                 Map<String, String> loginReq = Map.of(
                         "username", "Tharusha",
@@ -62,19 +62,18 @@ public class ZoneService {
             deviceId = deviceResponse.getDeviceId();
 
         } catch (Exception e) {
+            // 5. Fallback: If External API is offline
             cachedExternalToken = null;
-            System.err.println("IoT Integration Error: " + e.getMessage());
+            System.err.println("IoT API Error: Using Simulated ID");
             deviceId = "SIM-" + UUID.randomUUID().toString().substring(0, 8).toUpperCase();
         }
 
-        // 4. Update deviceId and Save
         savedZone.setDeviceId(deviceId);
         return zoneRepository.save(savedZone);
     }
 
     public Zone getById(Long id) {
-        return zoneRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Zone not found with ID: " + id));
+        return zoneRepository.findById(id).orElseThrow(() -> new RuntimeException("Zone not found with ID: " + id));
     }
 
     @Transactional
@@ -90,9 +89,7 @@ public class ZoneService {
     }
 
     public void delete(Long id) {
-        if (!zoneRepository.existsById(id)) {
-            throw new RuntimeException("Zone not found");
-        }
+        if (!zoneRepository.existsById(id)) throw new RuntimeException("Zone not found");
         zoneRepository.deleteById(id);
     }
 }
