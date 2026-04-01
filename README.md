@@ -94,5 +94,5 @@ Include the token in the **Authorization** header:
 * **Health Checks:** Access `/actuator/health` on any service.
 * **Postman Collection:** Found in the root directory as `AGMS_Collection.json`.
 * **Architecture Proof:** Screenshot available at `docs/eureka-dashboard.png`.
-
+  ![Eureka Dashboard Proof](docs/eureka-dashboard.png)
 -----
