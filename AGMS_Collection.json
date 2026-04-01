@@ -1,0 +1,627 @@
+{
+  "info": {
+    "_postman_id": "26f86c20-c567-4fcc-82bd-4bc79c861ed1",
+    "name": "AGMS_Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "44945659",
+    "_collection_link": "https://go.postman.co/collection/44945659-26f86c20-c567-4fcc-82bd-4bc79c861ed1?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Zone-Service (8081)",
+      "item": [
+        {
+          "name": "http://localhost:8080/api/zones",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiRkFSTUVSIiwic3ViIjoiZmFybWVyMSIsImlhdCI6MTc3NDg1MTAxNCwiZXhwIjoxNzc0ODUxOTE0fQ.VlUE-EGspU2di1m_tizl-K9hVAZFllPEK0lVYEyur08",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Zone B\",\r\n  \"minTemp\": 22.0,\r\n  \"maxTemp\": 30.0\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/zones",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "zones"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:8080/api/zones/2",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiRkFSTUVSIiwic3ViIjoiZmFybWVyMSIsImlhdCI6MTc3NDg1MjE4NSwiZXhwIjoxNzc0ODUzMDg1fQ.CQqCwHtk0ZrFceV1Kq2bilJngKCXvIKkkNaBI00el_k",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/zones/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "zones",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:8080/api/zones/2",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiRkFSTUVSIiwic3ViIjoiZmFybWVyMSIsImlhdCI6MTc3NDg1MjE4NSwiZXhwIjoxNzc0ODUzMDg1fQ.CQqCwHtk0ZrFceV1Kq2bilJngKCXvIKkkNaBI00el_k",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Zone B\",\r\n  \"minTemp\": 20.0,\r\n  \"maxTemp\": 35.0\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/zones/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "zones",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:8080/api/zones/2",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiRkFSTUVSIiwic3ViIjoiZmFybWVyMSIsImlhdCI6MTc3NDg1MjE4NSwiZXhwIjoxNzc0ODUzMDg1fQ.CQqCwHtk0ZrFceV1Kq2bilJngKCXvIKkkNaBI00el_k",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/zones/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "zones",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:8080/api/zones (check temper validation)",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiRkFSTUVSIiwic3ViIjoiZmFybWVyMSIsImlhdCI6MTc3NDg1MjE4NSwiZXhwIjoxNzc0ODUzMDg1fQ.CQqCwHtk0ZrFceV1Kq2bilJngKCXvIKkkNaBI00el_k",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Invalid Zone\",\r\n  \"minTemp\": 40.0,\r\n  \"maxTemp\": 20.0\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/zones",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "zones"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Crop-Service (8084)",
+      "item": [
+        {
+          "name": "http://localhost:8080/api/crops",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiRkFSTUVSIiwic3ViIjoiZmFybWVyMSIsImlhdCI6MTc3NDg1NjE0MywiZXhwIjoxNzc0ODU3MDQzfQ.yxb9wRKs3THfvTOScNFPBEsUb0pl7RxC3dPqiy5-o0E",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"cropName\": \"Potato\",\r\n  \"quantity\": 200\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/crops",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "crops"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:8080/api/crops",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiRkFSTUVSIiwic3ViIjoiZmFybWVyMSIsImlhdCI6MTc3NDg1NjE0MywiZXhwIjoxNzc0ODU3MDQzfQ.yxb9wRKs3THfvTOScNFPBEsUb0pl7RxC3dPqiy5-o0E",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/crops",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "crops"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:8080/api/crops/1/status?",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiRkFSTUVSIiwic3ViIjoiZmFybWVyMSIsImlhdCI6MTc3NDg1NjE0MywiZXhwIjoxNzc0ODU3MDQzfQ.yxb9wRKs3THfvTOScNFPBEsUb0pl7RxC3dPqiy5-o0E",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/crops/1/status?status=VEGETATIVE",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "crops",
+                "1",
+                "status"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "VEGETATIVE"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Automation_Service (8083)",
+      "item": [
+        {
+          "name": "http://localhost:8080/api/automation/process",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiRkFSTUVSIiwic3ViIjoiZmFybWVyMSIsImlhdCI6MTc3NDg2NjEwNiwiZXhwIjoxNzc0ODY3MDA2fQ.Zp3U0rqY649w3rRuhqFenG4FrDPdblB0P1wU3MGhRCs",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"zoneId\": \"1\",\r\n  \"temperature\": 35.0,\r\n  \"humidity\": 60.0\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/automation/process",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "automation",
+                "process"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:8080/api/automation/logs",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiRkFSTUVSIiwic3ViIjoiZmFybWVyMSIsImlhdCI6MTc3NDg3MzUxNiwiZXhwIjoxNzc0ODc0NDE2fQ.9G3xrwUs8poueA09s5x0qUs9fcowjhhUgnh4XfBfJJQ",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/automation/logs?",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "automation",
+                "logs"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": null
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Sensor_Service (8082)",
+      "item": [
+        {
+          "name": "http://localhost:8080/api/sensors",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiRkFSTUVSIiwic3ViIjoiZmFybWVyMSIsImlhdCI6MTc3NDg3MzUxNiwiZXhwIjoxNzc0ODc0NDE2fQ.9G3xrwUs8poueA09s5x0qUs9fcowjhhUgnh4XfBfJJQ",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/sensors",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "sensors"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:8080/api/sensors/latest",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiRkFSTUVSIiwic3ViIjoiZmFybWVyMSIsImlhdCI6MTc3NDg3MzUxNiwiZXhwIjoxNzc0ODc0NDE2fQ.9G3xrwUs8poueA09s5x0qUs9fcowjhhUgnh4XfBfJJQ",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/sensors/latest",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "sensors",
+                "latest"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:8080/api/automation/logs",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiRkFSTUVSIiwic3ViIjoiZmFybWVyMSIsImlhdCI6MTc3NDg3MzUxNiwiZXhwIjoxNzc0ODc0NDE2fQ.9G3xrwUs8poueA09s5x0qUs9fcowjhhUgnh4XfBfJJQ",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/automation/logs?",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "automation",
+                "logs"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": null
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Auth-Service",
+      "item": [
+        {
+          "name": "http://localhost:8085/api/auth/register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"farmer2\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"FARMER\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8085/api/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8085",
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:8085/api/auth/login",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"farmer1\",\r\n  \"password\": \"123456\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8085/api/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8085",
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "IOT-Register for Diveses",
+      "item": [
+        {
+          "name": "http://104.211.95.241:8080/api/auth/register",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\":\"Tharusha\",\r\n    \"password\":\"1234\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://104.211.95.241:8080/api/auth/register",
+              "protocol": "http",
+              "host": [
+                "104",
+                "211",
+                "95",
+                "241"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://104.211.95.241:8080/api/auth/login",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\":\"Tharusha\",\r\n    \"password\":\"1234\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://104.211.95.241:8080/api/auth/login",
+              "protocol": "http",
+              "host": [
+                "104",
+                "211",
+                "95",
+                "241"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
